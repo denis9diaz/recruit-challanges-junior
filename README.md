@@ -33,14 +33,14 @@ He añadido pruebas automatizadas usando el framework de testing **Jest** para v
 
 ## Comandos
 
-He añadido un script al `package.json` para ejecutar los tests y la aplicación.
+He añadido un script al `package.json` para ejecutar los tests.
 
 - Para ejecutar los tests:
 
   ```bash
   npm test
 
-- Para ejecutar el código:
+- Para ejecutar la aplicación:
 
   ```bash
   npx ts-node src/index.ts
