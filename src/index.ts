@@ -28,6 +28,10 @@ const calcularSatisfaccion = (entrenador: Entrenador, cliente: Cliente) => {
 export const asignarClientes = (entrenadores: Entrenador[], clientes: Cliente[]) => {
   const asignaciones: { cliente: string, entrenador: string }[] = [];
 
+  clientes.sort(function (a, b) {
+    return b.importanciaReputacion - a.importanciaReputacion;
+  });
+
   clientes.forEach(cliente => {
     let mejorEntrenador: Entrenador | null = null;
     let mejorSatisfaccion = -1;
