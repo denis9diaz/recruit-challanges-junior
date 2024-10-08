@@ -1,7 +1,7 @@
 import { Entrenador, Cliente, asignarClientes } from '../index';
 
 describe('Asignación de clientes a entrenadores', () => {
-  it('debería asignar a los clientes al entrenador con mayor satisfacción disponible', () => {
+  it('debería asignar a los clientes más importantes primero, basándose en la mayor satisfacción disponible', () => {
     const entrenadores = [
       new Entrenador('A', 4.5, 1),
       new Entrenador('B', 3.2, 4),
@@ -19,11 +19,11 @@ describe('Asignación de clientes a entrenadores', () => {
     const asignaciones = asignarClientes(entrenadores, clientes);
 
     expect(asignaciones.length).toBe(4);
-    
-    expect(asignaciones).toContainEqual({ cliente: 'q', entrenador: 'A' });
-    expect(asignaciones).toContainEqual({ cliente: 'r', entrenador: 'D' });
+
+    expect(asignaciones).toContainEqual({ cliente: 't', entrenador: 'A' });
     expect(asignaciones).toContainEqual({ cliente: 's', entrenador: 'D' });
-    expect(asignaciones).toContainEqual({ cliente: 't', entrenador: 'B' });
+    expect(asignaciones).toContainEqual({ cliente: 'r', entrenador: 'D' });
+    expect(asignaciones).toContainEqual({ cliente: 'q', entrenador: 'B' });
   });
 
   it('debería reducir las plazas disponibles después de asignar un cliente', () => {
